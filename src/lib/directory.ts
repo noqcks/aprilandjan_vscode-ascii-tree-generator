@@ -56,10 +56,9 @@ export async function listDirectory(
   if (maxDepth <= 0) {
     return [];
   }
-  const fileNames = await glob('*', {
+  const fileNames: string[] = await glob('*', {
     cwd: dir,
     dot: true,
-    // Removed 'sort' option as it's not a valid GlobOptions property
     ignore,
   });
   let files: IFileStat[] = (await Promise.all(
