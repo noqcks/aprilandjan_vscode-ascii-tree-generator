@@ -56,7 +56,7 @@ export async function listDirectory(
   if (maxDepth <= 0) {
     return [];
   }
-  const fileNames: string[] = await glob('*', {
+  const fileNames: string[] = await glob.promise('*', {
     cwd: dir,
     dot: true,
     ignore,
