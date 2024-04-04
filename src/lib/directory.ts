@@ -63,7 +63,7 @@ export async function listDirectory(
     ignore,
   });
   let files: IFileStat[] = (await Promise.all(
-    fileNames.map((item) => getFileStat(item, dir))
+    fileNames.map((item: string) => getFileStat(item, dir))
   )) as IFileStat[];
   files = files.filter((item) => item !== null);
   //  sort
