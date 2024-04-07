@@ -60,7 +60,7 @@ export async function listDirectory(
   const fileNames = await glob('*', {
     cwd: dir,
     dot: true,
-    nosort: !sort,
+    sort: sort,
     ignore,
   });
   let files: IFileStat[] = (await Promise.all(
