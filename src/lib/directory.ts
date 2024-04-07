@@ -4,7 +4,8 @@ import * as path from 'path';
 import { promisify } from 'util';
 import { IFileStat, IFileTreeItem, IListDirectoryConfig } from './interface';
 
-const glob = promisify(rawGlob);
+import * as rawGlob from 'glob';
+const glob = promisify(rawGlob.glob);
 const readStat = promisify(fs.stat);
 
 /**
